@@ -17,7 +17,7 @@ export default function Navbar(props) {
    }  
    // let backdropBlur = `backdrop-blur-${defaultBlurSize}`;
 
-   console.log(backdropBlur);
+   // console.log(backdropBlur);
 
    return <>
       {/* <div className={`fixed flex justify-between top-0 left-0 w-full h-20 ${ props.background ?  props.background : defaultBackground} backdrop-blur-${props.blur ? props.blur : defaultBlurSize} z-50`}> */}
@@ -26,7 +26,7 @@ export default function Navbar(props) {
             {/* Logo */}
          </div>
 
-         <div className="flex flex-column gap-10 mx-28 my-auto">
+         <div className="flex flex-column gap-10 mx-12 md:mx-28 my-auto">
             {props.links && props.links.map((element) => {
                return <h1 className="text-xl text-white"> {element} </h1>
             })}

@@ -6,8 +6,6 @@ const GENERATOR_MAX_SIZE = 4;
 const MOUSE_RADIUS = 80;
 const MOUSE_PUSH_FORCE_MAG = 0.02;
 
-const GENERATOR_OFFSET = 100;
-
 const VXMAGSTART = -1.5;
 const VXMAGEND = 1.5;
 const VYMAGSTART = 1; 
@@ -23,7 +21,7 @@ class Generator {
    flakes: (Flake)[] = [];
 
    constructor(x: number, y: number, p5: P5Instance) {
-      this.x = x;
+       this.x = x;
       this.y = y;
       this.p5 = p5;
 
