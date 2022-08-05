@@ -1,5 +1,11 @@
+/* eslint-disable */
+
 import Carousel from "react-multi-carousel";
 import React from "react";
+
+import Swal from "sweetalert2/dist/sweetalert2.js";
+
+
 
 export function CarouselHeading(props) {
   return (
@@ -25,8 +31,11 @@ export function CarouselContent(props) {
 
 export function CarouselCard(props) {
   return (
-   //  <div className="p-4 flex flex-col w-full shrink-0 mx-auto gap-3 shadow-sm backdrop-blur-3xl shadow-gray-300/40 bg-gray-100/80 rounded-lg " >
-   <div className="p-6 flex flex-col gap-3 w-full bg-slate-500/40 rounded-xl hover:bg-sky-500 transition-all duration-300 ease-in-out">
+    //  <div className="p-4 flex flex-col w-full shrink-0 mx-auto gap-3 shadow-sm backdrop-blur-3xl shadow-gray-300/40 bg-gray-100/80 rounded-lg " >
+    <div
+      onClick={props.onClick}
+      className="p-6 flex flex-col gap-3 w-full bg-slate-500/40 rounded-xl hover:bg-sky-500 transition-all duration-300 ease-in-out"
+    >
       {props.children}
     </div>
   );
@@ -73,19 +82,32 @@ export default function CustomCarousel(props) {
       }
     >
       {props.eventData.map((event, index) => {
-         console.log(window.innerWidth)
-        const maxLength = window.innerWidth < 300 ? 50 : (window.innerWidth < 400 ? 100 : 200);
+        const maxLength =
+          window.innerWidth < 300 ? 50 : window.innerWidth < 400 ? 100 : 200;
         //trim the string to the maximum length
         var trimmedString = event.description.substr(0, maxLength);
 
         //re-trim if we are in the middle of a word
-        trimmedString = trimmedString.substr(
-          0,
-          Math.min(trimmedString.length, trimmedString.lastIndexOf(" "))
-        ) + "...";
+        trimmedString =
+          trimmedString.substr(
+            0,
+            Math.min(trimmedString.length, trimmedString.lastIndexOf(" "))
+          ) + "...";
 
         return (
-          <div className="flex px-2 justify-self-center w-full h-full">
+          <div
+            onClick={() => {
+              Swal.fire({
+                title: event.name ,
+                text: event.description,
+                imageUrl: "https://unsplash.it/400/200",
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: "Custom image",
+              });
+            }}
+            className="flex px-2 justify-self-center w-full h-full"
+          >
             <CarouselCard>
               <CarouselHeading>{event.name}</CarouselHeading>
               <CarouselContent>

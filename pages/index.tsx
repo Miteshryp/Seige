@@ -1,7 +1,11 @@
+/* eslint-disable */
+
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 // import { Carousel, CarouselItem, SSRProvider } from "react-bootstrap";
+
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 import {
   CarouselCard,
@@ -13,6 +17,8 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
+
+
 
 const CustomCarousel = dynamic(
   async () => {
@@ -39,7 +45,7 @@ import TimelineData from "../utils/TimelineData";
 
 // CSS imports
 import "react-vertical-timeline-component/style.min.css";
-import Model from "../components/p5/sketches/Model";
+// import 'sweetalert2/src/sweetalert2.scss'
 
 export default function Home() {
   let [activeIndex, setActiveIndex] = useState(0);
@@ -117,9 +123,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="lg:basis-1/3 mx-auto flex flex-row justify-center items-center">
+              {/* <div className="lg:basis-1/3 mx-auto flex flex-row justify-center items-center">
                 <Sketch sketch={Model} />
-              </div>
+              </div> */}
             </div>
 
             <div className="my-40 flex flex-row">

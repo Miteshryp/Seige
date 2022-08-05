@@ -3,12 +3,12 @@ import EventData from "./EventData"
 export default [
    {
       date: "13th March - 9am",
-      events: ["Crypto Crunch", "Corporate Chanakya", "Intern Fair"],
+      events: ["Crypto Crunch Starts", "Corporate Chanakya Entries Open", "Intern Fair - CV Submission"],
       shortDescription: ["", "", ""]
    },
    {
       date: "14th March",
-      events: ["AI Workshop"],
+      events: ["AI Workshop", "Spin a Web"],
       shortDescription: ["", "", ""]
    },
    {
